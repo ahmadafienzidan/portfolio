@@ -1,9 +1,9 @@
-import { Button } from "@heroui/react";
+import Landing from "./pages/Landing/Landing";
+
 function App() {
   return (
     <>
-      <h1>Hello World!</h1>
-      <Button color="primary">Test Button</Button>
+      <Landing />
     </>
   );
 }
