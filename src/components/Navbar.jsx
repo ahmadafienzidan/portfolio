@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Navbar as HeroUINavbar, Button, NavbarBrand, NavbarContent, NavbarItem, Link, DropdownItem, DropdownTrigger, Dropdown, DropdownMenu, Avatar, DropdownSection } from "@heroui/react";
+import { Navbar as HeroUINavbar, Button, NavbarBrand, NavbarContent, NavbarItem, DropdownItem, DropdownTrigger, Dropdown, DropdownMenu, DropdownSection } from "@heroui/react";
 import { ChevronDown } from "lucide-react";
 
 import Logo from "./Logo";
@@ -8,7 +8,7 @@ function Navbar() {
 
   return (
     <>
-      <HeroUINavbar>
+      <HeroUINavbar className="backdrop-blur-lg shadow-md z-100">
         <NavbarBrand>
           <Logo />
           <h1 className="font-bold">Afien Zidan</h1>
