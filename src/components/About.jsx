@@ -40,13 +40,13 @@ const industries = [
 
 export default function About() {
   return (
-    <section className="flex flex-col mt-16 md:flex-row items-center justify-between gap-8 px-8 sm:px-10 md:px-14 lg:px-16 py-10 backdrop-blur-md">
+    <section className="flex flex-col mt-16 md:flex-row items-center justify-between gap-8 px-8 sm:px-10 md:px-14 lg:px-16 py-10 ">
       {/* Left: Photo & About block */}
       <div className="basis-2/5 w-full flex flex-col gap-4">
         <div className="grid grid-rows-2 grid-cols-2 gap-4">
           {/* About Block */}
           <div className="col-span-1 relative bg-[#EAE4D5] rounded-3xl aspect-square">
-            <span className="absolute bottom-4 left-4 text-3xl font-semibold text-gray-800">About</span>
+            <span className="absolute bottom-4 left-4 text-3xl font-semibold text-gray-800">About Me</span>
           </div>
 
           {/* Images */}
@@ -56,22 +56,43 @@ export default function About() {
       </div>
 
       {/* Right: Content */}
-      <div className="basis-3/5 flex flex-col gap-6 border border-gray-200 rounded-3xl p-8 shadow-inner bg-white">
+      <div
+        className="
+    basis-3/5
+    flex flex-col gap-6
+    bg-white
+    rounded-3xl
+    p-8
+    shadow-lg
+    hover:shadow-2xl
+    transition-shadow duration-300
+  "
+      >
         <h1 className="text-2xl font-semibold text-gray-800 border-b border-gray-100 pb-6">I'm Ahmad 'Afien Zidan, an Electrical Engineer turned Software Developer</h1>
 
-        <div className="space-y-6 border-b border-gray-100 pb-6">
-          <p className="font-light text-gray-600 text-lg leading-relaxed">
+        <div className="space-y-6 border-b border-gray-100 ">
+          <p className="font-light text-gray-600  leading-relaxed">
             With a strong passion for EV technology and digital solutions. Starting from designing wiring schematics for electric buses to building award-winning electric motorcycles, I now apply the same engineering mindset to the world of
             web development using React, Node.js, and MongoDB.
           </p>
-          <p className="font-light text-gray-600 text-lg leading-relaxed">I believe in merging hardware and software to create real-world impact building things that move people, literally and digitally.</p>
+          <p className="font-light text-gray-600 leading-relaxed">I believe in merging hardware and software to create real-world impact building things that move people, literally and digitally.</p>
         </div>
 
         <div>
           <h3 className="text-xl font-semibold mb-6 text-gray-800">Industries I'm Active In:</h3>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {industries.map((item, idx) => (
-              <div key={idx} className="flex items-start gap-4 p-3 hover:bg-gray-50 rounded-xl transition-colors">
+              <div
+                key={idx}
+                className="
+            flex items-start gap-4
+            p-4
+            bg-gray-50
+            rounded-2xl
+            hover:bg-gray-100
+            transition-colors duration-200
+          "
+              >
                 <span className="shrink-0 mt-1 p-2 bg-[#EAE4D5] rounded-lg">{item.icon}</span>
                 <span className="font-light text-gray-600">{item.text}</span>
               </div>
