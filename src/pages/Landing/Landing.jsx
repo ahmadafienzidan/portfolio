@@ -1,17 +1,18 @@
 import Hero from "../../components/Hero";
 import About from "../../components/About";
 import Achievements from "../../components/Achievements";
+import TechStack from "../../components/TechStack";
+import Footer from "../../components/Footer";
+import WorkExperiences from "../../components/WorkExperiences";
 
 function Landing() {
   return (
     <>
-      <div className="sticky top-0">
+      <div className="softgradient">
         <Hero />
-      </div>
-      <div className="relative z-0">
         <About />
-        <Achievements />
       </div>
+      <WorkExperiences />
     </>
   );
 }
