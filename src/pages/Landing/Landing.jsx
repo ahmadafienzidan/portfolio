@@ -1,18 +1,35 @@
 import Hero from "../../components/Hero";
 import About from "../../components/About";
-import Achievements from "../../components/Achievements";
 import TechStack from "../../components/TechStack";
-import Footer from "../../components/Footer";
 import WorkExperiences from "../../components/WorkExperiences";
+import Achievements from "../../components/Achievements";
+import Footer from "../../components/Footer";
+import Stat from "../../components/Stat";
 
 function Landing() {
   return (
     <>
-      <div className="softgradient">
-        <Hero />
-        <About />
-      </div>
-      <WorkExperiences />
+      <main className="softgradient">
+        <section id="home">
+          <Hero />
+        </section>
+        <section id="about">
+          <About />
+          <Stat />
+        </section>
+        <section id="experience">
+          <WorkExperiences />
+        </section>
+        <section id="skills" className="hidden md:block">
+          <TechStack />
+        </section>
+        <section id="achievement">
+          <Achievements />
+        </section>
+        <section id="footer">
+          <Footer />
+        </section>
+      </main>
     </>
   );
 }
