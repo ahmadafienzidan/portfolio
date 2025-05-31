@@ -1,21 +1,29 @@
 import { useState } from "react";
 import { Navbar as HeroUINavbar, Button, NavbarBrand, NavbarContent, NavbarItem, DropdownItem, DropdownTrigger, Dropdown, DropdownMenu, DropdownSection } from "@heroui/react";
 import { ChevronDown } from "lucide-react";
+import { useSectionScroll } from "../hooks/useSectionScroll";
 
-import Logo from "./Logo";
 function Navbar() {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
-
+  const scrollTo = useSectionScroll(80);
   return (
     <>
       <HeroUINavbar className="backdrop-blur-lg shadow-md z-100">
         <NavbarBrand>
-          <Logo />
           <h1 className="font-bold">Afien Zidan</h1>
         </NavbarBrand>
         <NavbarContent>
-          <NavbarItem>Home</NavbarItem>
-          <NavbarItem>Experience</NavbarItem>
+          <NavbarItem>
+            <a onClick={scrollTo("home")} className="cursor-pointer" href="#">
+              Home
+            </a>
+          </NavbarItem>
+
+          <NavbarItem>
+            <a onClick={scrollTo("experience")} className="cursor-pointer" href="#">
+              Experience
+            </a>
+          </NavbarItem>
           <Dropdown onOpenChange={(open) => setIsDropdownOpen(open)}>
             <NavbarItem>
               <DropdownTrigger>
@@ -35,8 +43,16 @@ function Navbar() {
               </DropdownSection>
             </DropdownMenu>
           </Dropdown>
-          <NavbarItem>Skills</NavbarItem>
-          <NavbarItem>Achievement</NavbarItem>
+          <NavbarItem>
+            <a onClick={scrollTo("skills")} className="cursor-pointer" href="#">
+              Skills
+            </a>
+          </NavbarItem>
+          <NavbarItem>
+            <a onClick={scrollTo("achievement")} className="cursor-pointer" href="#">
+              Achievement
+            </a>
+          </NavbarItem>
         </NavbarContent>
       </HeroUINavbar>
     </>

@@ -23,6 +23,18 @@ const iconHover = {
   transition: { type: "spring", stiffness: 300 },
 };
 
+export const floatingVariants = {
+  animate: (custom) => ({
+    y: [0, -custom.amplitude, 0],
+    transition: {
+      duration: custom.duration,
+      repeat: Infinity,
+      ease: "easeInOut",
+      delay: custom.delay,
+    },
+  }),
+};
+
 function Hero() {
   return (
     <motion.main initial="hidden" animate="show" variants={containerVariants} className=" rounded-2xl left-0 w-full flex flex-col md:flex-row items-center justify-between gap-6 px-8 sm:px-10 md:px-14 lg:px-16 py-10">
@@ -42,6 +54,9 @@ function Hero() {
           ))}
         </motion.div>
 
+        <motion.h1 className="text-2xl mt-4 mb-4 font-medium" initial={{ opacity: 0, x: -50 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.8 }}>
+          Hello Everyone I'am <span className="bg-gradient-to-r from-purple-400 via-pink-500 to-red-500 bg-clip-text text-transparent">Afien</span>
+        </motion.h1>
         <motion.h1 className="text-6xl mt-4 mb-4 font-light" initial={{ opacity: 0, x: -50 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.8 }}>
           SOFTWARE DEVELOPER & ELECTRICAL ENGINEER
         </motion.h1>
@@ -50,9 +65,11 @@ function Hero() {
 
         <div className="flex">
           <motion.div {...hoverSpring} className="mr-4">
-            <Button isLoading={false} className="border bg-limelight border-limelight text-bluedark hover:bg-bluesoft hover:border-bluesoft hover:text-white rounded-xl px-4 py-2 text-sm font-medium transition-all duration-300">
-              Download CV
-            </Button>
+            <a href="./files/CV.pdf" target="_blank">
+              <Button isLoading={false} className="border bg-limelight border-limelight text-bluedark hover:bg-bluesoft hover:border-bluesoft hover:text-white rounded-xl px-4 py-2 text-sm font-medium transition-all duration-300">
+                Download CV
+              </Button>
+            </a>
           </motion.div>
 
           <motion.div {...hoverSpring}>
@@ -64,14 +81,14 @@ function Hero() {
       </motion.section>
 
       <motion.section variants={itemVariants} className="basis-1/2 flex justify-center self-end relative h-full" id="hero-center">
-        <div className="absolute top-0 right-6 transform backdrop-blur-lg rounded-xl px-5 py-3 text-sm shadow-lg bg-white/30">
+        <motion.div variants={floatingVariants} custom={{ amplitude: 8, duration: 3, delay: 0 }} animate="animate" className="absolute top-0 right-6 transform backdrop-blur-lg rounded-xl px-5 py-3 text-sm shadow-lg bg-white/30">
           <p className="text-xl font-medium ">Ahmad 'Afien Zidan</p>
           <p className="text-xs ">Electrical Engineer | Software Developer | EV Enthusiast</p>
-        </div>
+        </motion.div>
 
-        <div className="absolute bottom-2 left-6 transform  backdrop-blur-md rounded-full px-5 py-3 text-sm shadow-lg ">
+        <motion.div variants={floatingVariants} custom={{ amplitude: 6, duration: 2.5, delay: 0 }} animate="animate" className="absolute bottom-2 left-6 transform  backdrop-blur-md rounded-full px-5 py-3 text-sm shadow-lg ">
           <p className="text-xs font-medium">3+ years in EV | 1+ years in Software Dev</p>
-        </div>
+        </motion.div>
 
         <img src="./img/Hero.png" alt="Hero" className=" object-cover rounded-3xl w-full h-auto max-w-md md:max-w-lg lg:max-w-xl" />
       </motion.section>
