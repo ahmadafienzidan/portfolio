@@ -32,7 +32,7 @@ const Footer = () => {
             <ul className="space-y-3">
               {["Experience", "Project", "Skills", "Achievement"].map((item) => (
                 <li key={item}>
-                  <a href={`${item.toLowerCase()}`} className="transition-colors duration-300 flex items-center group">
+                  <a href={`#${item.toLowerCase()}`} className="transition-colors duration-300 flex items-center group">
                     <span>{item}</span>
                     <LinkOutlined size={14} className="ml-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                   </a>
